@@ -8,10 +8,10 @@ declare var window: any
 import NFT from '../utils/knft.json'
 
 const mint = () => {
-	const [mintedNFT, setMintedNFT] = useState(null)
-	const [miningStatus, setMiningStatus] = useState(null)
+	const [mintedNFT, setMintedNFT] = useState("")
+	const [miningStatus, setMiningStatus] = useState(0)
 	const [loadingState, setLoadingState] = useState(0)
-	const [txError, setTxError] = useState(null)
+	const [txError, setTxError] = useState("")
 	const [currentAccount, setCurrentAccount] = useState('')
 	const [correctNetwork, setCorrectNetwork] = useState(false)
 
@@ -117,12 +117,12 @@ const mint = () => {
 			}
 		} catch (error) {
 			console.log('Error minting character', error)
-			setTxError(error.message)
+			// setTxError(error.message)
 		}
 	}
 
 	// Gets the minted NFT data
-	const getMintedNFT = async (tokenId) => {
+	const getMintedNFT = async (tokenId: any) => {
 		try {
 			const { ethereum } = window
 
@@ -146,7 +146,7 @@ const mint = () => {
 			}
 		} catch (error) {
 			console.log(error)
-			setTxError(error.message)
+			// setTxError(error.message)
 		}
 	}
 
