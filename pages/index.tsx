@@ -4,7 +4,7 @@ import { ethers } from 'ethers'
 import axios from 'axios'
 
 // import Loader from 'react-loader-spinner';
-
+declare var window: any
 import NFT from '../utils/knft.json'
 
 const mint = () => {
